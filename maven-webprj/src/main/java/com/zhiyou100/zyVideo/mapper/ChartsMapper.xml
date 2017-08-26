@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhiyou100.zyVideo.mapper.ChartsMapper" >
+  <resultMap id="BaseResultMap" type="com.zhiyou100.zyVideo.model.ChartsData" >
+    <result column="course_name" property="dataName" jdbcType="VARCHAR" />
+    <result column="videoPlayTimes" property="dataNum" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <select id="getAllDataInfo" resultMap="BaseResultMap">
+  	select sum(v.video_play_times) as videoPlayTimes,c.course_name from video v left join course c on v.course_id=c.id group by c.course_name
+  </select>
+</mapper>

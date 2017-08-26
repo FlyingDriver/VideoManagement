@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE taglib
+  PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>2.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>common</short-name>
+	<!-- 名字可以随便写,相当于引入标签库中的uri -->
+	<uri>http://zhiyou100.com/common/</uri>
+	<!-- 相当于给标签库起的名字 -->
+	<display-name>Common Tag</display-name>
+	<!-- 给标签库进行的描述 -->
+	<description>Common Tag library</description>
+	<!-- 在该标签库中定义一个标签 -->
+	<tag>
+	<!-- 标签的名称 -->
+		<name>page</name>
+		<!-- 和相关的类进行关联 -->
+		<tag-class>com.zhiyou100.zyVideo.util.NavigationTag</tag-class>
+		<body-content>JSP</body-content>
+		<description>create navigation for paging</description>
+		<!-- 定义标签中的一个属性名称是bean-->
+		<attribute>
+			<name>bean</name>
+			<!-- 是否可以通过jsp表达式动态的进行赋值 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 定义标签中的一个属性名称是number-->
+		<attribute>
+			<name>number</name>
+			<!-- 是否可以通过jsp表达式动态的进行赋值 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<!-- 定义标签中的属性 -->
+		<attribute>
+			<name>url</name>
+			<!-- 是否是必须的 -->
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>
