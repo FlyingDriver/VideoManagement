@@ -52,7 +52,7 @@
             <li id="charts"><a href="${pageContext.servletContext.contextPath}/showChart.action">报表分析</a></li>
           </ul>
           <ul class="nav navbar-nav" style="float: right;">
-            <li><a href="#" >${name}&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+            <li><a href="${pageContext.servletContext.contextPath}/logout.action">${name}&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
           </ul>
         </div>
       </div>

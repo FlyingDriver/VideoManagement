@@ -29,7 +29,7 @@
     		 $dataNum.push($temp[i].dataNum);  
          } 
 	});
-    
+        
 		    require.config({
 		        paths: {
 		            echarts:'${pageContext.request.contextPath}/echarts/dist'

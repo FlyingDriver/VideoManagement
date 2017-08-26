@@ -24,4 +24,9 @@ public class LoginController {
 		}
 		
 	}
+	
+	@RequestMapping("logout")
+	public String logout(){
+		return "";
+	}
 }
