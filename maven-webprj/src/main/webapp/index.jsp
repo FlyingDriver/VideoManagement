@@ -63,7 +63,7 @@
 				      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
 				    </div>
 				  </div>
-				  <div class="form-group">
+				 <!--  <div class="form-group">
 				    <div class="col-lg-offset-2 col-lg-10">
 				      <div class="checkbox">
 				        <label>
@@ -71,7 +71,7 @@
 				        </label>
 				      </div>
 				    </div>
-				  </div>
+				  </div> -->
 				  <div class="form-group">
 				    <div class="col-lg-12">
 				      <button type="submit" id="sub" class="btn btn-primary btn-lg btn-block" style="width:400px; margin-left:0px;" >Sign in</button>
