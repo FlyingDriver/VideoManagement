@@ -50,7 +50,7 @@
 <div class="container" style="margin-top: 255px;">
 		 	<div align="center"><img src="${pageContext.servletContext.contextPath}/img/logo.png"></div>
 		 	<div style="width:400px; margin-top: 20px;margin-left:375px;">
-		 		<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/Login.action" onsubmit="return recode()" id="form">
+		 		<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/Login.action" onsubmit="return recode()" method="post" id="form">
 				  <div class="form-group">
 				    <label for="inputEmail3" class="col-lg-2 control-label">Username:</label>
 				    <div class="col-sm-10">

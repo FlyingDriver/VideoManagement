@@ -7,6 +7,6 @@
   </resultMap>
   
   <select id="getAllDataInfo" resultMap="BaseResultMap">
-  	select sum(v.video_play_times) as videoPlayTimes,c.course_name from video v left join course c on v.course_id=c.id group by c.course_name
+  	select avg(v.video_play_times) as videoPlayTimes,c.course_name from video v left join course c on v.course_id=c.id group by c.course_name
   </select>
 </mapper>

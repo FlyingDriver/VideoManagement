@@ -50,6 +50,7 @@
    	   	   			  data : JSON.stringify(selectedId)
    	   	   			}); 
    	   			$('#batches').modal('hide');
+   	   			location.reload();
    	   			});	
    		});
 	});
