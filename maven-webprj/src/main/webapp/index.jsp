@@ -52,13 +52,13 @@
 		 	<div style="width:400px; margin-top: 20px;margin-left:375px;">
 		 		<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/Login.action" onsubmit="return recode()" method="post" id="form">
 				  <div class="form-group">
-				    <label for="inputEmail3" class="col-lg-2 control-label">Username:</label>
+				    <label for="inputEmail3" class="col-lg-2 control-label">UserName:</label>
 				    <div class="col-sm-10">
 				      <input type="text" class="form-control" id="inputUsername" placeholder="UserName" name="username">
 				    </div>
 				  </div>
 				  <div class="form-group">
-				    <label for="inputPassword3" class="col-lg-2 control-label">Password:</label>
+				    <label for="inputPassword3" class="col-lg-2 control-label">PassWord:</label>
 				    <div class="col-sm-10">
 				      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
 				    </div>

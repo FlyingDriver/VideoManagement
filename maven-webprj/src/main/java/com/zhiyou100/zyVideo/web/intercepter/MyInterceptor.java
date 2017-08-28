@@ -28,7 +28,7 @@ public class MyInterceptor implements HandlerInterceptor{
 		
 		if(arg0.getSession().getAttribute("name")==null){
 			
-			arg1.setHeader("refresh", "1;url='/SSMTest2/index.jsp'");
+			arg1.setHeader("refresh", "1;url='/maven-webprj/index.jsp'");
 			arg1.setContentType("text/html; charset=UTF-8");
 			arg1.getWriter().write("未登录,请登录！");
 			return false;

@@ -46,9 +46,6 @@
     <table class="table table-hover table-condensed" style="vertical-align: middle;text-align: center;">
       <thead>
         <tr>
-        <th class="col-sm-1">
-          	<input type="checkbox" onclick="selectall(this.id)" id="sel" class="count">全选</input>
-          </th>
           <th class="col-sm-1" style="text-align:center;">序号</th>
           <th class="col-sm-2" style="text-align:center;">姓名</th>
           <th class="col-sm-2" style="text-align:center;">职位</th>
@@ -60,9 +57,6 @@
       <tbody>
         <c:forEach items="${page.rows}" var="speaker" varStatus="status">
         <tr>
-          <td> <!-- style="text-align:left;" -->
-          	<input type="checkbox" name="selectall" id="${speaker.id}" class="count"/>
-          </td>
 		  <th scope="row" style="text-align:center;">${status.count+5*(page.page-1)}</th>
           <td>${speaker.speakerName}</td>
           <td>${speaker.speakerJob}</td>
