@@ -29,7 +29,7 @@ public class VideoController {
 	 
 	
 	
-	@RequestMapping("/videoList")
+	@RequestMapping("/admin/videoList")
 	public String videoList(Model m,
 			@RequestParam(value="title",required=false,defaultValue="")String title,
 			@RequestParam(value="speaker",required=false,defaultValue="") String speaker,
@@ -49,7 +49,7 @@ public class VideoController {
 		return "video/videoList";
 	}
 	
-	@RequestMapping(value="/addVideo",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addVideo",method=RequestMethod.GET)
 	public String addVideo(Model m){
 		List<Speaker> allSpeaker=ss.getAllspeaker();
 		List<Course> allCourse = cs.getAllCourse();
@@ -58,13 +58,13 @@ public class VideoController {
 		return "video/addVideo";
 	}
 	
-	@RequestMapping(value="/addVideo",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addVideo",method=RequestMethod.POST)
 	public String addVideo(Video v){
 		vs.addVideo(v);
-		return "forward:/videoList.action";
+		return "forward:/admin/videoList.action";
 	}
 	
-	@RequestMapping(value="/updateVideo",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateVideo",method=RequestMethod.GET)
 	public String updateVideo(int id, Model m){
 		List<Speaker> allSpeaker=ss.getAllspeaker();
 		List<Course> allCourse = cs.getAllCourse();
@@ -73,18 +73,18 @@ public class VideoController {
 		m.addAttribute("allCourse",allCourse);
 		return "/video/updateVideo";
 	}
-	@RequestMapping(value="/updateVideo",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updateVideo",method=RequestMethod.POST)
 	public String updateVideo(Video v){
 		vs.updateVideo(v);
 		
-		return "forward:/videoList.action";
+		return "forward:/admin/videoList.action";
 	}
-	@RequestMapping("/deleteVideo")
+	@RequestMapping("/admin/deleteVideo")
 	public String deleteVideo(Integer id){
 		vs.deleteVideo(id);
-		return "forward:/videoList.action";
+		return "forward:/admin/videoList.action";
 	}
-	@RequestMapping("/batchesDelete.action")
+	@RequestMapping("/admin/batchesDelete.action")
 	public String batchesDelete(@RequestBody String[] array){
 		String str="";
 		for(int i=0;i<array.length;i++){
@@ -95,7 +95,7 @@ public class VideoController {
 			}
 		}
 		vs.batchesDelete(str);
-		return "forward:/videoList.action";
+		return "forward:/admin/videoList.action";
 		
 	}
 }

@@ -46,13 +46,13 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
           <ul class="nav navbar-nav">
-            <li ><a href="${pageContext.servletContext.contextPath}/videoList.action">视频管理</a></li>
-            <li ><a href="${pageContext.servletContext.contextPath}/speakerList.action" >主讲人管理</a></li>
-            <li><a href="${pageContext.servletContext.contextPath}/courseList.action" >课程管理</a></li>
+            <li ><a href="${pageContext.servletContext.contextPath}/admin/videoList.action">视频管理</a></li>
+            <li ><a href="${pageContext.servletContext.contextPath}/admin/speakerList.action" >主讲人管理</a></li>
+            <li><a href="${pageContext.servletContext.contextPath}/admin/courseList.action" >课程管理</a></li>
             <li id="charts"><a href="${pageContext.servletContext.contextPath}/showChart.action">报表分析</a></li>
           </ul>
           <ul class="nav navbar-nav" style="float: right;">
-            <li><a href="${pageContext.servletContext.contextPath}/logout.action">${name}&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+            <li><a href="${pageContext.servletContext.contextPath}/admin/logout.action">${name}&nbsp;<span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
           </ul>
         </div>
       </div>

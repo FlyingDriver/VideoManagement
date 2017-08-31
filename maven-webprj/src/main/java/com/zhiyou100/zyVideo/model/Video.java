@@ -29,6 +29,9 @@ public class Video {
     
     private String courseName;
 
+    
+    
+
 	public Integer getId() {
 		return id;
 	}
@@ -142,6 +145,6 @@ public class Video {
 				+ "]";
 	}
 
-	
+
 	
 }

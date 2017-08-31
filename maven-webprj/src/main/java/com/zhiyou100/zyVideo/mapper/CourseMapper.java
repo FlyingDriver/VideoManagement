@@ -29,4 +29,6 @@ public interface CourseMapper {
     int updateByPrimaryKey(Course record);
 
 	List<Course> getAllCourse();
+	
+	List<Course> getFrontCourse(@Param("subjectId")Integer subjectId);
 }

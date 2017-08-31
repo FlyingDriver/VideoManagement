@@ -18,41 +18,41 @@ public class CourseController {
 	@Autowired 
 	SubjectService ss;
 	
-	@RequestMapping("/courseList")
+	@RequestMapping("/admin/courseList")
 	public String getAllCourse(Model m){
 		m.addAttribute("course",cs.getAllCourse());
 		return "/course/courseList";
 	}
 	
-	@RequestMapping(value="/addCourse", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addCourse", method=RequestMethod.GET)
 	public String addCourse(Model m){
 		m.addAttribute("subject",(ss.getAllSubject()));
 		return "/course/addCourse";
 	}
-	@RequestMapping(value="/addCourse", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addCourse", method=RequestMethod.POST)
 	public String addCourse(Course c){
 		System.out.println(c);
 		cs.addCourse(c);
-		return "forward:/courseList.action";
+		return "forward:/admin/courseList.action";
 	}
 	
-	@RequestMapping(value="/updateCourse", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateCourse", method=RequestMethod.GET)
 	public String updateCourse(Integer id,Model m){
 		m.addAttribute("course", cs.getCourseById(id));
 		m.addAttribute("subject",ss.getAllSubject());
 		return "/course/updateCourse";
 	}
 	
-	@RequestMapping(value="/updateCourse", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updateCourse", method=RequestMethod.POST)
 	public String updateCourse(Course c){
 		cs.updateCourse(c);
-		return "forward:/courseList.action";
+		return "forward:/admin/courseList.action";
 	}
 	
-	@RequestMapping("/deleteCourse")
+	@RequestMapping("/admin/deleteCourse")
 	public String deleteCourse(Integer id){
 		cs.deleteCourse(id);
-		return "forward:/courseList.action";
+		return "forward:/admin/courseList.action";
 	}
 	
 }

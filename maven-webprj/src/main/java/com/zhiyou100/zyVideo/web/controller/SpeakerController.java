@@ -17,7 +17,7 @@ public class SpeakerController {
 	@Autowired
 	SpeakerService ss;
 	
-	@RequestMapping("/speakerList")
+	@RequestMapping("/admin/speakerList")
 	public String getAllSpeaker(Model m,
 			@RequestParam(value="page",required=false,defaultValue="1")Integer page,
 			@RequestParam(value="name",required=false,defaultValue="")String name,
@@ -33,33 +33,33 @@ public class SpeakerController {
 		return "/speaker/speakerList";
 	}
 	
-	@RequestMapping(value="/addSpeaker",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/addSpeaker",method=RequestMethod.GET)
 	public String addSpeaker(){
 		return "speaker/addSpeaker";
 	}
 	
-	@RequestMapping(value="/addSpeaker",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addSpeaker",method=RequestMethod.POST)
 	public String addSpeaker(Speaker s){
 		ss.addSpeaker(s);
-		return "forward:/speakerList.action";
+		return "forward:/admin/speakerList.action";
 	}
-	@RequestMapping(value="/updateSpeaker", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/updateSpeaker", method=RequestMethod.GET)
 	public String updateSpeaker(Integer id ,Model m){
 		m.addAttribute("speaker",ss.getSpeakerById(id));
 		return "speaker/updateSpeaker";
 	}
 	
-	@RequestMapping(value="/updateSpeaker", method=RequestMethod.POST)
+	@RequestMapping(value="/admin/updateSpeaker", method=RequestMethod.POST)
 	public String updateSpeaker(Speaker s){
 		ss.updateSpeaker(s);
-		return "forward:/speakerList.action";
+		return "forward:/admin/speakerList.action";
 	}
 	
-	@RequestMapping("/deleteSpeaker.action")
+	@RequestMapping("/admin/deleteSpeaker.action")
 	public String deleteSpeaker(Integer id){
 		
 		ss.deleteSpeaker(id);
-		return "forward:/speakerList.action";
+		return "forward:/admin/speakerList.action";
 	}
 	
 }

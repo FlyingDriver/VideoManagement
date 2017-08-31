@@ -22,7 +22,7 @@
   	<div class="jumbotron">
   <h3>编辑视频信息-视频管理</h3>
 </div>
-  	<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/addVideo.action" method="post">
+  	<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/admin/addVideo.action" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label"><strong>视频标题</strong></label>
     <div class="col-sm-10">
@@ -77,7 +77,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">保存</button>&nbsp;&nbsp;<a href="${pageContext.servletContext.contextPath}/videoList.action"><button type="button" class="btn btn-default">返回列表</button></a>
+      <button type="submit" class="btn btn-primary">保存</button>&nbsp;&nbsp;<a href="${pageContext.servletContext.contextPath}/admin/videoList.action"><button type="button" class="btn btn-default">返回列表</button></a>
     </div>
   </div>
 </form>

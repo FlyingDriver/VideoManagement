@@ -10,6 +10,19 @@
     <result column="subject_id" property="subjectId" jdbcType="INTEGER" />
     <result column="subject_name" property="subjectName" jdbcType="VARCHAR" />
   </resultMap>
+  <resultMap id="frontCourseMap" type="com.zhiyou100.zyVideo.model.Course" >
+    <result column="courseid" property="id" jdbcType="INTEGER" />
+    <result column="course_descr" property="courseDescr" jdbcType="VARCHAR" />
+    <result column="course_name" property="courseName" jdbcType="VARCHAR" />
+    <collection property="videoList" ofType="Video">
+    	<result column="videoid" property="id" jdbcType="INTEGER" />
+	    <result column="video_image_url" property="videoImageUrl" jdbcType="VARCHAR" />
+	    <result column="video_title" property="videoTitle" jdbcType="VARCHAR" />
+	    <result column="video_play_times" property="videoPlayTimes" jdbcType="INTEGER" />
+	    <result column="video_length" property="videoLength" jdbcType="INTEGER" />
+    </collection>
+  </resultMap>
+  
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -230,5 +243,13 @@
   <select id="getAllCourse" resultMap="BaseResultMap">
   	select c.*,s.subject_name from course c left join subject s on c.subject_id=s.id 
   </select>
+  
+  <select id="getFrontCourse" resultMap="frontCourseMap">
+  
+  select c.id courseid, c.course_descr,c.course_name,v.id videoid,v.video_image_url,v.video_title,v.video_play_times,v.video_length from course c ,video v where v.course_id =c.id and subject_id=${subjectId}
+  
+  </select>
+  
+  
   
 </mapper>

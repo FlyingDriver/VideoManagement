@@ -44,12 +44,12 @@
    	   		$('#conf').on('click',function(){
    	   			$.ajax({  
    	   	   			  type : 'POST',  
-   	   	   			  url:'/maven-webprj/batchesDelete.action',  
+   	   	   			  url:'/maven-webprj/admin/batchesDelete.action',  
    	   	   			  contentType : "application/json" ,
    	   	   			  data : JSON.stringify(selectedId)
    	   	   			}); 
    	   			$('#batches').modal('hide');
-   	   			location.reload();
+   	   				self.location.href="/maven-webprj/admin/videoList.action";
    	   			});	
    		});
 	});
@@ -81,11 +81,11 @@
   <h3>视频列表-视频管理</h3>
 	</div>
   	<div style="float: left;">
-  		<a href="${pageContext.servletContext.contextPath}/addVideo.action"><button type="button" class="btn btn-primary">添加视频</button></a>&nbsp;
+  		<a href="${pageContext.servletContext.contextPath}/admin/addVideo.action"><button type="button" class="btn btn-primary">添加视频</button></a>&nbsp;
   		<button class="btn btn-primary" type="button" id="batchesDelete">批量删除<span class="badge" id="badge"></span></button>
   	</div>
   	<div style="float: right;">
-  			<form class="form-inline" action="${pageContext.servletContext.contextPath}/videoList.action">
+  			<form class="form-inline" action="${pageContext.servletContext.contextPath}/admin/videoList.action">
 				  <div class="form-group">
 				   <input type="text" class="form-control" placeholder="视频标题" style="width: 150px;" name="title" value="${tit eq '' ? '':tit}">
 				  </div>
@@ -176,7 +176,7 @@
     </table>
   </div>
  </div>
- <common:page url="${pageContext.request.contextPath}/videoList.action"/>
+ <common:page url="${pageContext.request.contextPath}/admin/videoList.action"/>
   </div>
   
   

@@ -1,12 +1,15 @@
 package com.zhiyou100.zyVideo.web.intercepter;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-public class MyInterceptor implements HandlerInterceptor{
+import com.zhiyou100.zyVideo.model.User;
+
+public class MyFrontInterceptor implements HandlerInterceptor{
 
 	@Override
 	public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3)
@@ -22,11 +25,10 @@ public class MyInterceptor implements HandlerInterceptor{
 
 	@Override
 	public boolean preHandle(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2) throws Exception {
-		if(arg0.getRequestURI().indexOf("Login.action")>=0){
+		if(arg0.getRequestURI().indexOf("/user/login.action")>=0||arg0.getRequestURI().indexOf("/user/Logout.action")>=0){
 			return true;
 		}
-		
-		if(arg0.getSession().getAttribute("name")==null){
+		if(((User)arg0.getSession().getAttribute("_front_user"))==null){
 			
 			arg1.setHeader("refresh", "1;url='/maven-webprj/index.jsp'");
 			arg1.setContentType("text/html; charset=UTF-8");

@@ -16,6 +16,17 @@
     <result column="speaker_name" property="speakerName" jdbcType="VARCHAR" />
     <result column="course_name" property="courseName" jdbcType="VARCHAR" />
   </resultMap>
+  <resultMap id="frontdataMap" type="com.zhiyou100.zyVideo.model.FrontData" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
+    <result column="video_image_url" property="videoImageUrl" jdbcType="VARCHAR" />
+    <result column="video_title" property="videoTitle" jdbcType="VARCHAR" />
+    <result column="video_descr" property="videoDescr" jdbcType="VARCHAR" />
+    <result column="speaker_head_url" property="speakerHeadUrl" jdbcType="VARCHAR" />
+    <result column="speaker_descr" property="speakerDescr" jdbcType="VARCHAR" />
+    <result column="speaker_name" property="speakerName" jdbcType="VARCHAR" />
+    <result column="course_descr" property="courseDescr" jdbcType="VARCHAR" />
+  </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
       <foreach collection="oredCriteria" item="criteria" separator="or" >
@@ -315,6 +326,17 @@
   </select>
   <delete id="batchesDelete">
   delete from video where id in (${ids})   
-  
   </delete>
+  
+  <select id="getFrontData" resultType="FrontData"><!-- resultMap="frontdataMap"> -->
+  
+	select v.id,v.video_url videourl,v.video_image_url videoimageurl, v.video_title videotitle , v.video_descr videodescr ,s.speaker_head_url speakerheadurl , s.speaker_descr speakerdescr,  s.speaker_name speakername,  c.course_descr coursedescr , sub.id subid,sub.subject_name subName from video v,course c,speaker s, subject sub WHERE v.id=${videoId} and v.speaker_id=s.id and v.course_id=c.id and sub.id=c.subject_id
+  </select>
+  <select id="getFrontVideoList" resultMap="BaseResultMap">
+  select v.*,s.speaker_name from video v,course c, speaker s where c.id=v.course_id and c.subject_id=${subjectId} and v.speaker_id=s.id
+  </select>
+  
+  <update id="addVideoPlayTimes">
+  update video set video_play_times=video_play_times+1 where id=${videoid}
+  </update>
 </mapper>

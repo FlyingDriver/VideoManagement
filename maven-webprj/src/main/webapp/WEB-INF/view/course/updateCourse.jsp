@@ -22,7 +22,7 @@
   	<div class="jumbotron">
   <h3>添加课程-课程管理</h3>
 </div>
-  	<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/updateCourse.action" method="post">
+  	<form class="form-horizontal" action="${pageContext.servletContext.contextPath}/admin/updateCourse.action" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label"><strong>课程标题</strong></label>
     <div class="col-sm-10">
@@ -49,7 +49,7 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
     <input type="hidden" name="id" value="${course.id}">
-      <button type="submit" class="btn btn-primary">保存</button>&nbsp;&nbsp;<a href="${pageContext.servletContext.contextPath}/courseList.action"><button type="button" class="btn btn-default">返回列表</button></a>
+      <button type="submit" class="btn btn-primary">保存</button>&nbsp;&nbsp;<a href="${pageContext.servletContext.contextPath}/admin/courseList.action"><button type="button" class="btn btn-default">返回列表</button></a>
     </div>
   </div>
 </form>

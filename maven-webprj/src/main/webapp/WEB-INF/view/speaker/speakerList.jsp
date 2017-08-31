@@ -26,9 +26,9 @@
   <h3>主讲人列表-主讲人管理</h3>
 	</div>
   	<div>
-  		<div style="float:left;"><a href="${pageContext.servletContext.contextPath}/addSpeaker.action"><button type="button" class="btn btn-primary">添加主讲人</button></a></div>
+  		<div style="float:left;"><a href="${pageContext.servletContext.contextPath}/admin/addSpeaker.action"><button type="button" class="btn btn-primary">添加主讲人</button></a></div>
   		<div style="float: right;">
-  			<form class="form-inline" action="${pageContext.servletContext.contextPath}/speakerList.action">
+  			<form class="form-inline" action="${pageContext.servletContext.contextPath}/admin/speakerList.action">
 				  <div class="form-group">
 				    <label for="exampleInputName2">姓名</label>
 				    <input type="text" class="form-control" id="exampleInputName2" placeholder="主讲人姓名" name="name" value="${name}">
@@ -96,7 +96,7 @@
       </tbody>
     </table>
   </div>
-  	 <common:page url="${pageContext.request.contextPath}/speakerList.action"/>
+  	 <common:page url="${pageContext.request.contextPath}/admin/speakerList.action"/>
   </div>
   </div>
 	</body>

@@ -24,7 +24,7 @@
   	<div class="jumbotron">
   <h3>课程列表-课程管理</h3>
 </div>
-  	<div><a href="${pageContext.servletContext.contextPath}/addCourse.action"><button type="button" class="btn btn-primary">添加课程</button></a></div>
+  	<div><a href="${pageContext.servletContext.contextPath}/admin/addCourse.action"><button type="button" class="btn btn-primary">添加课程</button></a></div>
   </div><br/>
   <div class="container">
   	<div class="bs-example" data-example-id="hoverable-table">
