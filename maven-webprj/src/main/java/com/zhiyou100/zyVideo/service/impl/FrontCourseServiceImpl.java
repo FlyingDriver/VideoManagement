@@ -53,7 +53,6 @@ public class FrontCourseServiceImpl implements FrontCourseSerivce {
 
 	@Override
 	public List<Video> getFrontVideoList(String subjectId) {
-		System.out.println(vm.getFrontVideoList(Integer.parseInt(subjectId)));
 		return vm.getFrontVideoList(Integer.parseInt(subjectId));
 	}
 

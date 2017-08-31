@@ -5,9 +5,6 @@ import com.zhiyou100.zyVideo.model.SQLVO;
 import com.zhiyou100.zyVideo.model.Video;
 import com.zhiyou100.zyVideo.model.VideoExample;
 import java.util.List;
-
-import javax.mail.search.IntegerComparisonTerm;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface VideoMapper {

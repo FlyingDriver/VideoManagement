@@ -20,10 +20,12 @@
 <jsp:include page="/WEB-INF/front/include/header.jsp"></jsp:include>
 
     <%--<div id="detail"></div>--%>
-
 <div>
+<a href="javascript :history.go(-1)"><span class="glyphicon glyphicon-circle-arrow-left" ></span></a>
+
+<a href="javascript :history.go(1)"><span class="glyphicon glyphicon-circle-arrow-right" ></span></a>
     <!--面包屑导航-->
-    <div class="container mian-nav">公开课 / ${FrontData.subName}</div>
+    <div class="container mian-nav"><a href="/maven-webprj/index.jsp">首页</a><a href="javascript:history.go(-1)">/公开课</a> / ${FrontData.subName}</div>
     <input type="hidden" id="videoId" value="${FrontData.id}">
     <div id="content">
 		<%@include file="/WEB-INF/front/video/content.jsp"%>

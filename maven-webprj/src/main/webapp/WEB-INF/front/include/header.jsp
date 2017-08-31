@@ -5,6 +5,7 @@
 <header>
 	<div class="container">
 		<span>欢迎来到IT培训的黄埔军校——智游教育！</span>
+		
 
 
 		<c:if test="${not empty _front_user}">

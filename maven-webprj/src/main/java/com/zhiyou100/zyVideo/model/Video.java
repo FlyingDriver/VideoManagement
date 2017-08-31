@@ -28,9 +28,19 @@ public class Video {
     private String speakerName;
     
     private String courseName;
+    
+    private String videoLengthStr;
 
     
     
+
+	public String getVideoLengthStr() {
+		return videoLengthStr;
+	}
+
+	public void setVideoLengthStr(String videoLengthStr) {
+		this.videoLengthStr = videoLengthStr;
+	}
 
 	public Integer getId() {
 		return id;
@@ -142,9 +152,10 @@ public class Video {
 				+ ", videoLength=" + videoLength + ", videoImageUrl=" + videoImageUrl + ", videoUrl=" + videoUrl
 				+ ", videoDescr=" + videoDescr + ", insertTime=" + insertTime + ", updateTime=" + updateTime
 				+ ", videoPlayTimes=" + videoPlayTimes + ", speakerName=" + speakerName + ", courseName=" + courseName
-				+ "]";
+				+ ", videoLengthStr=" + videoLengthStr + "]";
 	}
 
+	
 
 	
 }
