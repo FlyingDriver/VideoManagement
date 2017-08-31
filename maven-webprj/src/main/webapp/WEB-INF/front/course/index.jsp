@@ -26,7 +26,7 @@
 			style="background-image: url('/maven-webprj/static/img/banner-${subjectId}.jpg')"></div>
 
 		<!--面包屑导航-->
-		<div class="container mian-nav" id="navDiv">公开课 /${subject.subjectName }</div>
+		<div class="container mian-nav" id="navDiv"><a href="/maven-webprj/index.jsp">首页</a>/公开课 /${subject.subjectName }</div>
 		<input type="hidden" id="subjectId" value="${subjectId}">
 		<div class="classify">
 			<div class="container" id="dataContainer">
@@ -50,7 +50,7 @@
 									<span class="count" title="观看次数">
 									<img src="${pageContext.servletContext.contextPath}/static/img/count.png" alt="">${video.videoPlayTimes }</span>
 									<span class="duration" title="视频时长">
-										<img src="${pageContext.servletContext.contextPath}/static/img/player.png" alt="">${video.videoLength}</span>
+										<img src="${pageContext.servletContext.contextPath}/static/img/player.png" alt="">${video.videoLengthStr}</span>
 								</div>
 							</li>
 						</c:forEach>
