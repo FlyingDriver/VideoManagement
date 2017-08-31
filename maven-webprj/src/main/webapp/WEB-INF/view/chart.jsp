@@ -103,6 +103,11 @@
 						                data : [
 						                    {type : 'average', name: '平均值'}
 						                ]
+						            },
+						            itemStyle:{
+						            	normal:{
+						            		color:'#3fa1ff'
+						            	}
 						            }
 		            
 		                        }
