@@ -45,7 +45,7 @@
 								</div>
 						</a></td>
 						<td>
-							<!--上线时修改id--> <a href="front/course/index.do?subjectId=6"> <img
+							<!--上线时修改id--> <a href="${pageContext.servletContext.contextPath}/front/course/coruseIndex.action?subjectId=6"> <img
 								src="static/img/ui.jpg" alt="" class="image scale"
 								draggable="false">
 								<div class="headline">

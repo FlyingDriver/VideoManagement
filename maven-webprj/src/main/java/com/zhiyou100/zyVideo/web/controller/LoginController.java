@@ -1,8 +1,5 @@
 package com.zhiyou100.zyVideo.web.controller;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,12 +25,8 @@ public class LoginController {
 	}
 
 	@RequestMapping("/admin/logout")
-	public String logout(HttpSession session, HttpServletRequest req, HttpServletResponse res) {
-		String id = session.getId();
-		Cookie cookie = new Cookie("JSESSIONID", id);
-		cookie.setPath(req.getContextPath());
-		cookie.setMaxAge(0);
-		res.addCookie(cookie);
+	public String logout(HttpSession session) {
+		session.removeAttribute("name");
 		return "redirect:/index.jsp";
 	}
 }

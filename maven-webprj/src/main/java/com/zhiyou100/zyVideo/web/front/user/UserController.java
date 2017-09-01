@@ -65,12 +65,8 @@ public class UserController {
 	}
 	
 	@RequestMapping("/front/user/Logout")
-	public String userlogout(HttpSession session, HttpServletRequest req, HttpServletResponse res) {
-		String id = session.getId();
-		Cookie cookie = new Cookie("JSESSIONID", id);
-		cookie.setPath(req.getContextPath());
-		cookie.setMaxAge(0);
-		res.addCookie(cookie);
+	public String userlogout(HttpSession session) {
+		session.removeAttribute("_front_user");
 		return "redirect:/index.jsp";
 	}
 	

@@ -48,7 +48,7 @@
                                 <p>请选择图像文件</p>
                                 <div>
                                 <input type="hidden" name="id" value="${_front_user.id}">
-                                <input type="file" class="form-control" name="image_file" id="image_file" accept="image/png,image/jpeg,image/jpg"/>
+                                <input type="file" class="form-control" name="image_file" id="image_file" accept="image/png,image/jpeg,image/jpg"/><br><br>
                                 <input class="btn btn-primary" type="submit" value="上传" />
                                 </div>
                             </form>
